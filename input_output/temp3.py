@@ -21,8 +21,13 @@ def drawField(field):
     else:
       print("-----")
 
+# Player set
 Player = 1
+
+# Tic tac toe  init
 currentField = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+
+# draw pannel
 drawField(currentField)
 
 while(True): #True == True
@@ -33,10 +38,12 @@ while(True): #True == True
     # Player 1
     if currentField[MoveColumn][MoveRow] == " ":
       currentField[MoveColumn][MoveRow] = "X"
+      # change player
       Player = 2
   else:
     # Player 2
     if currentField[MoveColumn][MoveRow] == " ":
       currentField[MoveColumn][MoveRow] = "O"
+      # change player
       Player = 1
   drawField(currentField)
