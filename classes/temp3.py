@@ -31,6 +31,9 @@ class Pet:
   def setPlayful(self, _playful):
     self.playful = _playful
     
+  def __str__(self):
+    return (self.name + " is " + str(self.age) + " years old")
+    
 class Dog(Pet):
   def __init__(self, _name, _age, _hunger, _playful, _breed, _favoriteToy):
     Pet.__init__(self, _name, _age, _hunger, _playful)
@@ -40,5 +43,31 @@ class Dog(Pet):
   def wantsToPlay(self):
     if self.playful == True:
       return ("Dog wants to play with " + self.favoriteToy)
-    else
+    else:
       return ("Dog doesn't want to play")
+    
+class Cat(Pet):
+  def __init__(self, _name, _age, _hunger, _playful, _favoritePlaceToSit):
+    Pet.__init__(self, _name, _age, _hunger, _playful)
+    self.favoritePlaceToSit = _favoritePlaceToSit
+  
+  def wantsToSit(self):
+    if self.playful == False:
+      print("The cat wants to sit in", self.favoritePlaceToSit)
+    else:
+      print("The cat wants to play")
+      
+  def __str__(self):
+    return (self.name + " likes to sit in " + self.favoritePlaceToSit)
+  
+class Human:
+  def __init__(self, _name, _pets):
+    self.name = _name
+    self.pets = _pets
+    
+  def hasPets(self):
+    if len(self.Pets) != 0:
+      return "yes"
+    else:
+      return "no"
+  
