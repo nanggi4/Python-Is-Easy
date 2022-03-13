@@ -11,4 +11,4 @@ while(True):
   if guess == randVal:
     break
   elif guess < randVal:
-    
+    break
